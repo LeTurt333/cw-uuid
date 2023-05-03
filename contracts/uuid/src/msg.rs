@@ -1,31 +1,17 @@
 use cosmwasm_schema::{cw_serde, QueryResponses};
-use nois::NoisCallback;
 
 #[cw_serde]
 #[cfg_attr(test, derive(Default))]
-pub struct InstantiateMsg {
-    pub nois_proxy: String
-}
-
-#[cw_serde]
-pub enum ExecuteMsg {
-    GetUUIDs { num_uuid: u8, entropy: Option<String>},
-    // Nois Receiver
-    NoisReceive{callback: NoisCallback},
-}
+pub struct InstantiateMsg {}
 
 #[cw_serde]
 #[derive(QueryResponses)]
 pub enum QueryMsg {
-    #[returns(NoisProxyResponse)]
-    GetNoisProxy{}
-
+    #[returns(UuidResponse)]
+    GetUuids { amount: u8, entropy: u32 }
 }
 
 #[cw_serde]
-pub struct NoisProxyResponse {
-    pub nois_proxy: String
+pub struct UuidResponse {
+    pub uuids: Vec<String>
 }
-
-// #[derive(Serialize, Deserialize, JsonSchema)]
-// pub struct MigrateMsg {}

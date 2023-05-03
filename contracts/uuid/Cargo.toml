@@ -27,11 +27,7 @@ schemars.workspace = true
 serde.workspace = true
 cw-storage-plus.workspace = true
 
-cw-utils = "1.0.1"
+cw-uuid = { path = "../../packages/cw-uuid" }
 cw2 = "1.0.1"
 thiserror = { version = "1.0.38" }
-nois = "0.6.0"
 serde_json = "1.0.93"
-serde-cw-value = "0.7.0"
-serde-json-wasm = "0.5.0"
-uuid = {version = "1.3.1", default-features = false}

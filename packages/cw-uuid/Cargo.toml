@@ -1,0 +1,13 @@
+[package]
+name = "cw-uuid"
+description = "A package for generating UUIDs (Unique identifiers) inside CosmWasm smart contracts"
+version = "0.1.0"
+edition = "2021"
+authors.workspace = true
+# publish.workspace = true
+# keywords.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+uuid = {version = "1.3.1", default-features = false}
